@@ -1,5 +1,7 @@
 #! /bin/bash
 
+source ../fedora/chrome.sh
+
 clear
 function installation() {
 
@@ -13,12 +15,13 @@ function installation() {
 		echo "7. Instalar Tor Browser "
 		echo "8. Instalar Qupzilla "
 		echo "9. Instalar Yandex "
+		echo "m. Menu"
 		echo -n "Escolha qual navegador que instalar: "
 		read escolha_navegador
 
 		case $escolha_navegador in
 			1) echo "Chrome"
-				function_browser ;;
+				install_chrome ;;
 			2) echo "Firefox"
 				function_browser ;;
 			3) echo "Vivaldi"
@@ -35,6 +38,8 @@ function installation() {
 				function_browser ;;
 			9) echo "Yandex"
 				function_browser ;;
+			m) echo "Menu"
+				menu ;;
     	esac
 	}
 	function_escritorio() {
@@ -43,6 +48,7 @@ function installation() {
 		echo "3. Apache Office"
 		echo "4. Gnome Office"
 		echo "5. Calligra Office"
+		echo "m. Menu"
 		echo ;
 		echo ;
 		echo -n "Escolha uma suite para instalação: "
@@ -64,6 +70,8 @@ function installation() {
 			5) echo "Calligra Office"
 				# echo $escolha_escritorio
 				function_escritorio ;;
+			m) echo "Menu"
+				menu ;;
 		esac
 	}
 	function_desenvolvimento() {
@@ -75,6 +83,7 @@ function installation() {
 		echo "6. Sublime"
 		echo "7. Visual Studio Code"
 		echo "8. Atom"
+		echo "m. Menu"
 		echo ;
 		echo ;
 		echo -n "Escolha uma IDE para instalação: "
@@ -121,54 +130,8 @@ function installation() {
 				echo ;
 				echo ;
 				function_desenvolvimento ;;
+			9) echo "Menu"
+				menu ;;
 		esac
-	}
-
-	clear
-	echo "============================================="
-	echo ;
-	echo "  INSTALAÇÃO DE PROGRAMAS PARA FEDORA  "
-	echo ;
-	echo "============================================="
-
-	echo ""
-	echo "1. Instalação de navegadores"
-	echo "2. Instalação de Escritorio"
-	echo "3. Instalação de Desenvolvimento"
-	echo ;
-	echo ;
-	echo -n "Escolha uma opção de instalação: "
-	read escolha_fedora
-
-	echo ;
-	echo ;
-
-	case $escolha_fedora in
-		1) clear
-			echo ;
-			echo "Navegadores"
-			echo ;
-			function_browser
-			echo ;
-			echo ;
-			menu ;;
-		2) clear
-			echo ;
-			echo "Escritorio"
-			echo ;
-			function_escritorio
-			echo ;
-			echo ;
-			menu ;;
-		3) clear
-			echo ;
-			echo  "Desenvolvimento"
-			echo  ;
-			function_desenvolvimento
-			echo ;
-			echo ;
-			menu ;;
-	esac
-
-	
+	}	
 }
