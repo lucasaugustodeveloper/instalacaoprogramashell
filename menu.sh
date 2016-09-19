@@ -2,7 +2,7 @@
 
 # carregamento de arquivos para instalação dos programas
 source common/downloadfiles.sh
-source 
+source common/installation.sh
 
 # definindo permissão de execução para todos os arquivos
 sudo chmod +x common/*.sh
@@ -11,9 +11,9 @@ sudo chmod +x fedora/*.sh
 sudo chmod +x ubuntu/*.sh
 
 clear
-echo "======================"
+echo "=================================="
 echo "   INSTALAÇÃO DE PROGRAMAS   "
-echo "======================"
+echo "=================================="
 
 menu () {
 	echo ;
@@ -31,17 +31,19 @@ function_distro() {
 	case $escolha_distro in
 		1) clear
 			echo "Fedora"
-			function_fedora
-		menu ;;
+			installation
+			menu ;;
 		2) clear
 			echo "Elementary OS"
-		menu;;
+			installation
+			menu;;
 		3) clear
 			echo "Ubuntu"
-		menu ;;
+			installation
+			menu ;;
 		*) clear
 			echo "Escolha uma opção valida"
-		menu ;;
+			menu ;;
 	esac
 }
 

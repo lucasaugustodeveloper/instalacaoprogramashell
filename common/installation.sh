@@ -1,7 +1,7 @@
 #! /bin/bash
 
 clear
-function_fedora() {
+function installation() {
 
 	function function_browser() {
 		echo "1. Instalar Chrome "
@@ -35,7 +35,7 @@ function_fedora() {
 				function_browser ;;
 			9) echo "Yandex"
 				function_browser ;;
-                	esac
+    	esac
 	}
 	function_escritorio() {
 		echo "1. Libreoffice"
