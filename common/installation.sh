@@ -1,11 +1,18 @@
 #! /bin/bash
 
+# importação de arquivos para instalação de navegadores
 source ../fedora/chrome.sh
+
+
+# importação de arquivos para instalação de escritório
+
+# importação de arquivos para instalação de app para desenvolvimento
 
 clear
 function installation() {
 
 	function function_browser() {
+		clear
 		echo "1. Instalar Chrome "
 		echo "2. Instalar Firefox "
 		echo "3. Instalar Vivaldi "
@@ -16,12 +23,14 @@ function installation() {
 		echo "8. Instalar Qupzilla "
 		echo "9. Instalar Yandex "
 		echo "m. Menu"
+		echo ;
+		echo ;
 		echo -n "Escolha qual navegador que instalar: "
 		read escolha_navegador
 
 		case $escolha_navegador in
 			1) echo "Chrome"
-				install_chrome ;;
+				function_browser ;;
 			2) echo "Firefox"
 				function_browser ;;
 			3) echo "Vivaldi"
@@ -38,11 +47,13 @@ function installation() {
 				function_browser ;;
 			9) echo "Yandex"
 				function_browser ;;
-			m) echo "Menu"
+			m) clear
 				menu ;;
+			*) function_browser ;;
     	esac
 	}
 	function_escritorio() {
+		clear
 		echo "1. Libreoffice"
 		echo "2. WPS Office"
 		echo "3. Apache Office"
@@ -72,9 +83,11 @@ function installation() {
 				function_escritorio ;;
 			m) echo "Menu"
 				menu ;;
+			*) clear ; function_escritorio ;;
 		esac
 	}
 	function_desenvolvimento() {
+		clear
 		echo "1. NetBeans"
 		echo "2. Eclipse"
 		echo "3. Lazaro"
@@ -91,17 +104,14 @@ function installation() {
 
 		case $escolha_ide in
 			1) echo "NetBeans"
-				# echo  "${escolha_ide} - NetBeans"
 				echo ;
 				echo ;
 				function_desenvolvimento ;;
 			2) echo "Eclipse"
-				# echo $escolha_ide
 				echo ;
 				echo ;
 				function_desenvolvimento ;;
 			3) echo "Lazaro"
-				# echo $escolha_ide
 				echo ;
 				echo ;
 				function_desenvolvimento ;;
@@ -111,27 +121,24 @@ function installation() {
 				echo ;
 				function_desenvolvimento ;;
 			5) echo "Code"
-				# echo $escolha_ide
 				echo ;
 				echo ;
 				function_desenvolvimento ;;
 			6) echo "Sublime"
-				# echo $escolha_ide
 				echo ;
 				echo ;
 				function_desenvolvimento ;;
 			7) echo "Visual Studio Code"
-				# echo $escolha_ide
 				echo ;
 				echo ;
 				function_desenvolvimento ;;
 			8) echo "Atom"
-				# echo $escolha_ide
 				echo ;
 				echo ;
 				function_desenvolvimento ;;
 			9) echo "Menu"
 				menu ;;
+			*) function_desenvolvimento ;;
 		esac
 	}	
 }

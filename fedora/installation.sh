@@ -1,7 +1,10 @@
 #! /bin/bash
 
-clear
+# importação de arquivo para instalação de programas para a distro fedora
+source ../common/installation.sh
+
 function installation_fedora() {
+	clear
 	echo "============================================="
 	echo ;
 	echo "  INSTALAÇÃO DE PROGRAMAS FEDORA "
@@ -40,7 +43,7 @@ function installation_fedora() {
 		3) clear
 			echo ;
 			echo  "Desenvolvimento"
-			echo  ;
+			echo ;
 			function_desenvolvimento
 			echo ;
 			echo ;

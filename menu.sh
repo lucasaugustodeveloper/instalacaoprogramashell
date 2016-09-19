@@ -23,6 +23,7 @@ menu () {
 	echo "1. Fedora"
 	echo "2. Elementary OS"
 	echo "3. Ubuntu"
+	echo "4. exit programa"
 	echo ;
 	echo -n "Digite uma Opção: "
 	read escolha_distro
@@ -42,9 +43,8 @@ function_distro() {
 			echo "Ubuntu"
 			installation_ubuntu
 			menu ;;
-		*) clear
-			echo "Escolha uma opção valida"
-			menu ;;
+		4) exit 0 ;;
+		*) menu ;;
 	esac
 }
 
